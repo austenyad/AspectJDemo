@@ -1,0 +1,32 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+repositories {
+    google()
+    mavenCentral()
+    jcenter()
+}
+dependencies {
+    //Groovy DSL
+    implementation localGroovy()
+    // Gradle DSL
+    implementation gradleApi()
+
+    // Android DSL
+    implementation 'com.android.tools.build:gradle:4.1.0'
+
+
+}
+
+sourceSets {
+    main {
+        groovy {
+            srcDir 'src/main/groovy'
+        }
+        resources {
+            srcDir 'src/main/resources'
+        }
+
+    }
+
+}
